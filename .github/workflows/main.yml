@@ -12,11 +12,11 @@ jobs:
       - name: Step 1 - Get my code
         uses: actions/checkout@v3
 
-      - name: Step 2 - Build Docker image
-        run: docker build -t my-website ./myapp-docker
+      - name: Step 2 - Build portfolio website
+        run: docker build -t portfolio-website ./portfolio-project
 
       - name: Step 3 - Check Docker image
         run: docker images
 
       - name: Step 4 - Pipeline complete
-        run: echo "App built successfully!"
+        run: echo "Portfolio website built successfully!"

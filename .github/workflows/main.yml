@@ -1,4 +1,4 @@
-name: CI-CD-Pipeline
+name: DevOps-CI-CD-Pipeline
 
 on:
   push:
@@ -12,11 +12,11 @@ jobs:
       - name: Step 1 - Get my code
         uses: actions/checkout@v3
 
-      - name: Step 2 - Say Hello
-        run: echo "Pipeline is working!"
+      - name: Step 2 - Build Docker image
+        run: docker build -t my-website ./myapp-docker
 
-      - name: Step 3 - Show my files
-        run: ls
+      - name: Step 3 - Check Docker image
+        run: docker images
 
-      - name: Step 4 - Show date and time
-        run: date
+      - name: Step 4 - Pipeline complete
+        run: echo "App built successfully!"

@@ -15,8 +15,11 @@ jobs:
       - name: Step 2 - Build portfolio website
         run: docker build -t portfolio-website ./portfolio-project
 
-      - name: Step 3 - Check Docker image
+      - name: Step 3 - Build final DevOps app
+        run: docker build -t devops-final-app ./devops-final-project
+
+      - name: Step 4 - Check all Docker images
         run: docker images
 
-      - name: Step 4 - Pipeline complete
-        run: echo "Portfolio website built successfully!"
+      - name: Step 5 - Pipeline complete
+        run: echo "All projects built successfully!"
